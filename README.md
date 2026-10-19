@@ -16,7 +16,7 @@ MeTube is a self-hosted web UI for [yt-dlp](https://github.com/yt-dlp/yt-dlp). P
 ## Quick start
 
 ```bash
-docker run -d -p 8081:8081 -v /path/to/downloads:/downloads ghcr.io/alexta69/metube
+docker run -d -p 40003:40003 -v /path/to/downloads:/downloads ghcr.io/alexta69/metube
 ```
 
 Or with Docker Compose:
@@ -28,12 +28,12 @@ services:
     container_name: metube
     restart: unless-stopped
     ports:
-      - "8081:8081"
+      - "40003:40003"
     volumes:
       - /path/to/downloads:/downloads
 ```
 
-Then open `http://<host>:8081` in your browser. Images are multi-arch (amd64/arm64), and also published on Docker Hub as `alexta69/metube`.
+Then open `http://<host>:40003` in your browser. Images are multi-arch (amd64/arm64), and also published on Docker Hub as `alexta69/metube`.
 
 ## Configuration
 
@@ -103,7 +103,7 @@ Templates use [yt-dlp's output template syntax](https://github.com/yt-dlp/yt-dlp
 | Variable | Default | Description |
 | :--- | :--- | :--- |
 | `HOST` | `0.0.0.0` | Address to listen on. The default is every IPv4 interface; `*` (or empty) adds IPv6; `::` is IPv6 only. |
-| `PORT` | `8081` | Port to listen on. |
+| `PORT` | `40003` | Port to listen on. |
 | `URL_PREFIX` | `/` | Base path, for serving MeTube under a subpath of a [reverse proxy](https://github.com/alexta69/metube/wiki/Reverse-proxy-configurations). |
 | `HTTPS` | `false` | Serve HTTPS directly, using `CERTFILE` and `KEYFILE`. |
 | `CERTFILE` / `KEYFILE` | | Paths to the HTTPS certificate and key. |

@@ -87,7 +87,7 @@ class Config:
         'CORS_ALLOWED_ORIGINS': '',
         'ROBOTS_TXT': '',
         'HOST': '0.0.0.0',
-        'PORT': '8081',
+        'PORT': '40003',
         'HTTPS': 'false',
         'CERTFILE': '',
         'KEYFILE': '',
@@ -1546,7 +1546,7 @@ def isAccessLogEnabled():
 if __name__ == '__main__':
     logging.getLogger().setLevel(parseLogLevel(config.LOGLEVEL) or logging.INFO)
     # An empty HOST binds every interface on both stacks; print the '*' spelling
-    # that selects it rather than a bare ':8081'.
+    # that selects it rather than a bare ':40003'.
     log.info(f"Listening on {config.HOST or '*'}:{config.PORT}")
 
 

@@ -95,9 +95,9 @@ ENV UMASK=022
 ENV DOWNLOAD_DIR=/downloads
 ENV STATE_DIR=/downloads/.metube
 ENV TEMP_DIR=/downloads
-ENV PORT=8081
+ENV PORT=40003
 VOLUME /downloads
-EXPOSE 8081
+EXPOSE 40003
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s --retries=3 \
   CMD case "$HTTPS" in true|True|on|1) curl -fsSk "https://localhost:${PORT}/";; *) curl -fsS "http://localhost:${PORT}/";; esac || exit 1
 

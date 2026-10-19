@@ -292,7 +292,7 @@ class GuardedGetaddrinfoTests(unittest.TestCase):
         url_guard._allowed_endpoints = {("127.0.0.1", 4416)}
         with mock.patch("url_guard._real_getaddrinfo", return_value=_addrinfo("127.0.0.1")):
             with self.assertRaises(socket.gaierror):
-                _guarded_getaddrinfo("127.0.0.1", 8081)
+                _guarded_getaddrinfo("127.0.0.1", 40003)
 
     def test_proxy_address_not_borrowable_by_another_host(self):
         # Matching is on the configured host string: a manifest URL that resolves

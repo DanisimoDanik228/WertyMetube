@@ -868,10 +868,10 @@ async def test_cross_site_get_is_not_blocked(monkeypatch):
 @pytest.mark.asyncio
 @pytest.mark.parametrize("headers, expected", [
     # Browsers without Sec-Fetch-Site fall back to comparing Origin with Host.
-    ({"Origin": "http://metube.example:8081", "Host": "metube.example:8081"}, 200),
-    ({"Origin": "https://evil.example", "Host": "metube.example:8081"}, 403),
+    ({"Origin": "http://metube.example:40003", "Host": "metube.example:40003"}, 200),
+    ({"Origin": "https://evil.example", "Host": "metube.example:40003"}, 403),
     # A reverse proxy that rewrites Host usually passes the original along.
-    ({"Origin": "https://metube.example", "Host": "127.0.0.1:8081",
+    ({"Origin": "https://metube.example", "Host": "127.0.0.1:40003",
       "X-Forwarded-Host": "metube.example"}, 200),
     ({"Origin": "null", "Host": "metube.example"}, 403),
 ])
